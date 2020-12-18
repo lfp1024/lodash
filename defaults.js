@@ -7,11 +7,11 @@ const objectProto = Object.prototype
 const hasOwnProperty = objectProto.hasOwnProperty
 
 /**
- * Assigns own and inherited enumerable string keyed properties of source
- * objects to the destination object for all destination properties that
- * resolve to `undefined`. Source objects are applied from left to right.
- * Once a property is set, additional values of the same property are ignored.
- *
+ Assigns own and inherited enumerable string keyed properties of source 继承 source object 所有可可枚举的属性
+ objects to the destination object for all destination properties that  如果 destination object 的同名属性值为 undefined
+ resolve to `undefined`. Source objects are applied from left to right. 则赋值 source object 的属性值。一旦设置则忽略后续 source object
+ Once a property is set, additional values of the same property are ignored. 的同名属性值
+ * => 属性值以左边的为主，如果为undefined则以继承右边的，否则忽略右边的
  * **Note:** This method mutates `object`.
  *
  * @since 0.1.0
